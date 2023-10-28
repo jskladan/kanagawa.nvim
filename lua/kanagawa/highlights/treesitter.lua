@@ -51,18 +51,18 @@ function M.setup(colors, config)
 
         -- @constructor (Special)                      ; constructor calls and definitions
         ["@constructor.lua"] = { fg = theme.syn.keyword },
-        ["@constructor"] = { fg = theme.syn.special1 },
+        ["@constructor"] = { fg = theme.syn.type },
         -- @parameter (Identifier)                     ; parameters of a function
-        ["@parameter"] = { fg = theme.syn.parameter },
+        ["@parameter"] = { fg = theme.ui.fg },
         -- }}}
 
         -- Keywords (Keyword) {{{
         -- @keyword                                    ; various keywords
         -- @keyword.function                           ; keywords that define a function (e.g. `func` in Go, `def` in Python)
         -- @keyword.operator                           ; operators that are English words (e.g. `and` / `or`)
-        ["@keyword.operator"] = { fg = theme.syn.operator, bold = true },
+        ["@keyword.operator"] = vim.tbl_extend("force", { fg = theme.syn.keyword}, config.keywordStyle),
         -- @keyword.return                             ; keywords like `return` and `yield`
-        ["@keyword.return"] = vim.tbl_extend("force", { fg = theme.syn.special3 }, config.keywordStyle),
+        ["@keyword.return"] = vim.tbl_extend("force", { fg = theme.syn.keyword }, config.keywordStyle),
         ["@keyword.luap"] = { link = "@string.regex" },
 
         -- @conditional (Conditional -> Statement)     ; keywords related to conditionals (e.g. `if` / `else`)
@@ -72,7 +72,7 @@ function M.setup(colors, config)
         -- @label (Label)                              ; GOTO and other labels (e.g. `label:` in C)
         -- @include (Include)                          ; keywords for including modules (e.g. `import` / `from` in Python)
         -- @exception (Exception)                      ; keywords related to exceptions (e.g. `throw` / `catch`)
-        ["@exception"] = vim.tbl_extend("force", { fg = theme.syn.special3 }, config.statementStyle),
+        ["@exception"] = vim.tbl_extend("force", { fg = theme.syn.keyword }, config.statementStyle),
         -- }}}
 
         -- Types {{{
@@ -92,9 +92,9 @@ function M.setup(colors, config)
 
         --Identifiers {{{
         -- @variable (Identifier)                      ; various variable names
-        ["@variable"] = { fg = theme.ui.fg },
+        ["@variable"] = { fg = theme.syn.variable },
         -- @variable.builtin                           ; built-in variable names (e.g. `this`)
-        ["@variable.builtin"] = { fg = theme.syn.special2, italic = true },
+        ["@variable.builtin"] = { fg = theme.syn.type, italic = true },
 
         -- @constant (Constant)                        ; constant identifiers
         -- @constant.builtin (Special)                 ; built-in constant values

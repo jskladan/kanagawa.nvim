@@ -1,26 +1,28 @@
 local theme = require("kanagawa.colors").setup().theme
+local p = require('kanagawa.colors').setup().palette
+
 
 local kanagawa = {}
 
 kanagawa.normal = {
-  a = { bg = theme.syn.fun, fg = theme.ui.bg_m3 },
-  b = { bg = theme.diff.change, fg = theme.syn.fun },
-  c = { bg = theme.ui.bg_p1, fg = theme.ui.fg },
+  a = { bg = p.lotusTeal2, fg = theme.ui.bg },
+  b = { bg = theme.ui.bg_p1, fg = p.lotusTeal2 },
+  c = { bg = theme.ui.bg, fg = theme.ui.fg_dim },
 }
 
 kanagawa.insert = {
-  a = { bg = theme.diag.ok, fg = theme.ui.bg },
-  b = { bg = theme.ui.bg, fg = theme.diag.ok },
+  a = { bg = p.lotusGreen2, fg = theme.ui.bg },
+  b = { bg = theme.ui.bg_p1, fg = p.lotusGreen2 },
 }
 
 kanagawa.command = {
-  a = { bg = theme.syn.operator, fg = theme.ui.bg },
-  b = { bg = theme.ui.bg, fg = theme.syn.operator },
+  a = { bg = p.oniViolet, fg = theme.ui.bg },
+  b = { bg = theme.ui.bg, fg = p.oniViolet },
 }
 
 kanagawa.visual = {
-  a = { bg = theme.syn.keyword, fg = theme.ui.bg },
-  b = { bg = theme.ui.bg, fg = theme.syn.keyword },
+  a = { bg = p.autumnYellow, fg = theme.ui.bg },
+  b = { bg = theme.ui.bg, fg = p.autumnYellow },
 }
 
 kanagawa.replace = {
