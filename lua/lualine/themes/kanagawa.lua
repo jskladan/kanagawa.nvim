@@ -42,4 +42,14 @@ if vim.g.kanagawa_lualine_bold then
   end
 end
 
+-- effectively sets -- INSERT -- and -- VISUAL -- colors to green and yellow
+--   TBD: how to run autocommand on entering/leaving the other modes
+vim.cmd("au InsertEnter * hi ModeMsg guifg=" .. p.lotusGreen2)
+vim.cmd("au InsertLeave * hi ModeMsg guifg=" .. p.autumnYellow)
+-- vim.cmd("au VisualEnter * hi ModeMsg guifg=" .. p.autumnYellow)
+-- vim.cmd("au VisualLeave * hi ModeMsg guifg=" .. theme.diag.warning)
+-- vim.cmd("au CommandEnter * hi ModeMsg guifg=" .. p.oniViolet)
+-- vim.cmd("au CommandLeave * hi ModeMsg guifg=" .. theme.diag.warning)
+
+
 return kanagawa
