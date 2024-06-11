@@ -13,7 +13,7 @@ function M.setup(colors, config)
         -- Conceal		Placeholder characters substituted for concealed text (see 'conceallevel').
         Conceal = { fg = theme.ui.special, bold = true },
         -- CurSearch	Used for highlighting a search pattern under the cursor (see 'hlsearch').
-        CurSearch = { fg = theme.ui.fg_search, bg = theme.ui.bg_cur_search}, --, bold = true },
+        CurSearch = { fg = theme.ui.fg_cur_search, bg = theme.ui.bg_cur_search}, --, bold = true },
         -- Cursor		Character under the cursor.
         Cursor = { fg = theme.ui.bg, bg = theme.ui.fg },
         -- lCursor		Character under the cursor when |language-mapping| is used (see 'guicursor').
@@ -57,12 +57,13 @@ function M.setup(colors, config)
         LineNr = { fg = theme.ui.nontext, bg = theme.ui.bg_gutter },
         -- LineNrAbove	Line number for when the 'relativenumber' option is set, above the cursor line.
         -- LineNrBelow	Line number for when the 'relativenumber' option is set, below the cursor line.
-        -- CursorLineNr	Like LineNr when 'cursorline' is set and 'cursorlineopt' contains "number" or is "both", for the cursor line.
+        -- CursorLineNr	Likeu LineNr when 'cursorline' is set and 'cursorlineopt' contains "number" or is "both", for the cursor line.
         CursorLineNr = { fg = theme.diag.warning, bg = theme.ui.bg_gutter, bold = true },
         -- CursorLineFold	Like FoldColumn when 'cursorline' is set for the cursor line.
         -- CursorLineSign	Like SignColumn when 'cursorline' is set for the cursor line.
         -- MatchParen	Character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
-        MatchParen = { fg = theme.diag.warning, bold = true },
+        --MatchParen = { fg = theme.diag.warning, bold = true },
+        MatchParen = { link = "IncSearch" },
         -- ModeMsg		'showmode' message (e.g., "-- INSERT --").
         ModeMsg = { fg = theme.diag.warning, bold = true },
         -- MsgArea		Area for messages and cmdline.
